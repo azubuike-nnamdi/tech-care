@@ -12,7 +12,8 @@ export const Navbar = () => {
         <div className="flex space-x-8">
           {
             NavLink.map((navlink) => (
-              <div key={navlink.id} className="flex items-center space-x-2">
+              <div key={navlink.id}
+                className={`flex items-center space-x-2 ${navlink.name === 'Patients' && 'bg-[#01F0D0] rounded-full p-3'}`}>
                 <Image src={navlink.icon} alt='icon' width={15} height={20} />
                 <p className='text-sm font-medium'>{navlink.name}</p>
               </div>

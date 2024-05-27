@@ -32,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${manrope.className} bg-gray-200`}>
+      <body className={`${manrope.className} bg-[#F6F7F8]`}>
         <Navbar />
         {children}
       </body>

@@ -6,7 +6,7 @@ import React from 'react'
 
 export const Sidebar = () => {
   return (
-    <div className='bg-[#FFFFFF] p-3 w-[367px] rounded-lg md:overflow-y-auto h-screen'>
+    <div className='bg-[#FFFFFF] p-3 w-[367px] overflow-y-auto rounded-lg  h-screen'>
       <div className="flex justify-between items-center px-2">
         <h1 className='text-2xl font-bold'>Patients</h1>
         <Image src="/img/search_FILL0_wght300_GRAD0_opsz24.svg" alt='search_icon'

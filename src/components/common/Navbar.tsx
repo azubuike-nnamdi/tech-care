@@ -6,7 +6,7 @@ import { EllipsisVertical, Settings } from 'lucide-react';
 
 export const Navbar = () => {
   return (
-    <div className='md:flex justify-between md:m-5 md:p-3 rounded-full shadow-md bg-white items-center'>
+    <div className='md:flex justify-between md:m-5 md:p-3 rounded-full shadow-md bg-white items-center overflow-y-hidden'>
       <Image src={"/img/TestLogo.svg"} alt='brand_logo' width={150} height={200} />
       <div className="flex justify-center">
         <div className="flex space-x-8">

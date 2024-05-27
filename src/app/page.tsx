@@ -1,4 +1,5 @@
-import { Landing } from "@/components/ui/Landing";
+import Landing from "@/components/ui/Landing";
+
 
 
 export default function Home() {

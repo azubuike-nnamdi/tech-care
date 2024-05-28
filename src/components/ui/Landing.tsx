@@ -1,10 +1,10 @@
 import React from 'react'
 import { Sidebar } from '../common/Sidebar'
-import { Diagnosis } from './Diagnosis'
-import { JessicaDataTypes } from '@/utils/definitions';
 import { ProfileCard } from './ProfileCard';
+import { Diagnosis } from '../Diagnosis/Diagnosis';
+import { JessicaDataTypes } from '@/utils/definitions';
 
-async function getData() {
+async function getData(): Promise<JessicaDataTypes[]> {
   const username = process.env.NEXT_PUBLIC_USERNAME;
   const password = process.env.NEXT_PUBLIC_PASSWORD;
   const credentials = btoa(`${username}:${password}`);
@@ -26,9 +26,8 @@ export default async function Landing() {
   const data: JessicaDataTypes[] = await getData()
   const jessicaData = data.find(user => user.name === 'Jessica Taylor');
 
-  if (!jessicaData) {
-    return null;
-  }
+  if (!jessicaData) return null;
+
 
   return (
     <div className='flex items-center justify-between gap-6 overflow-y-hidden'>

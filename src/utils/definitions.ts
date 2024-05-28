@@ -76,3 +76,16 @@ export type ProfileDataType = {
 export type DiagnosisProps = {
   jessicaData: JessicaDataTypes;
 }
+
+
+interface BloodPressure {
+  systolic: {
+    value: number;
+  };
+}
+
+export type History = {
+  month: string;
+  year: number;
+  blood_pressure: BloodPressure;
+}

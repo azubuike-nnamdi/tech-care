@@ -14,7 +14,7 @@ export const Diagnosis: React.FC<DiagnosisProps> = ({ jessicaData }) => {
 
   return (
     <div className='h-screen '>
-      <div className='w-[766px] h-[640px] bg-[#fff] rounded-lg overflow-y-hidden'>
+      <div className='w-[766px] h-[740px] bg-[#fff] rounded-lg overflow-y-hidden'>
         <p className='p-4 font-bold text-2xl'>Diagnosis History</p>
         <DiagnosisChart jessicaData={jessicaData} />
         <div className="flex items-center justify-between gap-6 p-4">

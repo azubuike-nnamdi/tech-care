@@ -1,28 +1,41 @@
-type DiagnosisHistory = {
-  month?: string;
-  year?: number;
-  label?: string;
-  value?: number;
-  levels?: string
-  id?: number;
-  img?: string;
-  issue?: string;
-  rate?: string;
-  level?: string;
-  blood_pressure?: {
-    systolic: { value: number; levels: string };
-    diastolic: { value: number; levels: string };
+type BloodPressureReading = {
+  systolic: {
+    value: number;
+    levels: string;
   };
-  heart_rate?: { value: number; levels: string };
-  respiratory_rate?: { value: number; levels: string };
-  temperature?: { value: number; levels: string };
-}
+  diastolic: {
+    value: number;
+    levels: string;
+  };
+};
 
-type Diagnostic = {
+type VitalSigns = {
+  heart_rate: {
+    value: number;
+    levels: string;
+  };
+  respiratory_rate: {
+    value: number;
+    levels: string;
+  };
+  temperature: {
+    value: number;
+    levels: string;
+  };
+};
+
+type Diagnosis = {
   name: string;
   description: string;
   status: string;
-}
+};
+
+type DiagnosisHistoryEntry = {
+  month: string;
+  year: number;
+  blood_pressure: BloodPressureReading;
+  vital_signs: VitalSigns;
+};
 
 export type JessicaDataTypes = {
   name: string;
@@ -33,21 +46,12 @@ export type JessicaDataTypes = {
   phone_number: string;
   emergency_contact: string;
   insurance_type: string;
-  diagnosis_history: DiagnosisHistory[];
-  diagnostic_list: Diagnostic[];
+  diagnosis_history: DiagnosisHistoryEntry[];
+  diagnostic_list: Diagnosis[];
   lab_results: string[];
-}
-
-
-export type DiagnosisProps = {
-  jessicaData: JessicaDataTypes | undefined;
-  id?: number;
-  img?: string;
-  issue?: string;
-  rate?: string;
-  level?: string;
-
-}
+  monthYear?: string[];
+  systolic?: number[];
+};
 
 export type DiagnosisDataTypes = {
   id: number;
@@ -62,18 +66,13 @@ export type ProfileProps = {
   jessicaData: JessicaDataTypes | undefined;
 }
 
-export type DiagnosisHistoryCardProps = {
-  id?: number,
-  history: DiagnosisHistory;
-  img?: string;
-  issue?: string;
-  rate?: string;
-  level?: string;
-};
-
 export type ProfileDataType = {
   id: number;
   icon: string;
   title: string;
   value: string;
+}
+
+export type DiagnosisProps = {
+  jessicaData: JessicaDataTypes;
 }

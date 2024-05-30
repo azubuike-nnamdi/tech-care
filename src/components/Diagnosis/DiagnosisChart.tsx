@@ -6,7 +6,6 @@ import Image from 'next/image';
 import React from 'react';
 import { CartesianGrid, Line, LineChart, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 
-
 export const DiagnosisChart: React.FC<DiagnosisProps> = ({ jessicaData }) => {
   if (!jessicaData) return null;
   const chartData: History[] = jessicaData.diagnosis_history;
@@ -19,7 +18,6 @@ export const DiagnosisChart: React.FC<DiagnosisProps> = ({ jessicaData }) => {
     const monthYear: string = `${month}, ${history.year}`;
     return {
       monthYear,
-      year: history.year,
       systolic: history.blood_pressure.systolic.value,
     };
   });
@@ -67,7 +65,6 @@ export const DiagnosisChart: React.FC<DiagnosisProps> = ({ jessicaData }) => {
             <Tooltip />
             <Legend />
             <Line type="monotone" dataKey="systolic" stroke="#8884d8" activeDot={{ r: 8 }} />
-            <Line type="monotone" dataKey="year" stroke="#C26EB4" activeDot={{ r: 4 }} />
           </LineChart>
         </ResponsiveContainer>
       </div>
